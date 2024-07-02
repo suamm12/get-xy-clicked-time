@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get coordinates & click time</title>
+</head>
+
+<body>
+
+    <div id="divText"></div>
+    <img src="./img/artdome.png" alt="">
+
+    <script>
+        const img = document.querySelector("img")
+        const divText = document.getElementById("divText")
+        img.addEventListener("click", function (ev) {
+
+            const test = Math.floor(ev.timeStamp / 1000)
+            const clickTime = `クリックした時間:${test}`
+            divText.textContent = `クリックした座標${"X:" + ev.clientX}${"Y" + ev.clientY}${clickTime}`
+
+        })
+    </script>
+
+</body>
+
+</html>
